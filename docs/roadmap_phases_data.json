@@ -1,0 +1,1276 @@
+{
+  "roadmapMetadata": {
+    "target_role": "AI Engineer",
+    "version": "2.0",
+    "created_date": "2024-12-19",
+    "last_updated": "2024-12-19",
+    "duration": "6-12 months",
+    "timeCommitment": "15-20 hours/week",
+    "difficulty": "Intermediate to Advanced",
+    "totalPhases": 5,
+    "estimatedTotalHours": "480-580 hours"
+  },
+  "phases": [
+    {
+      "id": 0,
+      "title": "Foundation Building",
+      "duration": "6-8 weeks",
+      "priority": "Critical",
+      "description": "Build essential mathematical and Python foundations for AI",
+      "color": "bg-blue-500",
+      "icon": "🔢",
+      "totalHours": "100-120 hours",
+      "keySkills": [
+        {
+          "id": "math-foundations",
+          "title": "Mathematical Foundations",
+          "category": "Mathematics",
+          "importance": "Critical",
+          "timeRequired": "60-70 hours",
+          "topics": [
+            "Linear Algebra (vectors, matrices, eigenvalues)",
+            "Calculus (derivatives, chain rule, optimization)",
+            "Statistics & Probability (distributions, Bayes theorem)",
+            "Discrete Mathematics basics"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "linear-algebra-course",
+              "title": "Linear Algebra - Mathematics for Machine Learning",
+              "provider": "Coursera (Imperial College)",
+              "type": "course",
+              "cost": "Free audit / $49 certificate",
+              "rating": 4.6,
+              "duration": "4 weeks",
+              "url": "https://www.coursera.org/learn/linear-algebra-machine-learning",
+              "completed": false
+            },
+            {
+              "id": "khan-linear-algebra",
+              "title": "Khan Academy Linear Algebra",
+              "provider": "Khan Academy",
+              "type": "tutorial",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "Self-paced",
+              "url": "https://www.khanacademy.org/math/linear-algebra",
+              "completed": false
+            },
+            {
+              "id": "calculus-course",
+              "title": "Multivariate Calculus for ML",
+              "provider": "Coursera (Imperial College)",
+              "type": "course",
+              "cost": "Free audit / $49 certificate",
+              "rating": 4.7,
+              "duration": "4 weeks",
+              "url": "https://www.coursera.org/learn/multivariate-calculus-machine-learning",
+              "completed": false
+            },
+            {
+              "id": "statistics-course",
+              "title": "Statistics and Probability in Data Science",
+              "provider": "edX (UC San Diego)",
+              "type": "course",
+              "cost": "Free audit / $99 certificate",
+              "rating": 4.5,
+              "duration": "10 weeks",
+              "url": "https://www.edx.org/course/statistics-and-probability-in-data-science-using-python",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "python-ai",
+          "title": "Python for AI & Data Science",
+          "category": "Programming",
+          "importance": "Critical",
+          "timeRequired": "40-50 hours",
+          "topics": [
+            "Advanced Python concepts (OOP, functional programming)",
+            "NumPy for numerical computing",
+            "Pandas for data manipulation",
+            "Matplotlib & Seaborn for visualization",
+            "Jupyter notebooks and development environment"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "python-everybody",
+              "title": "Python for Everybody Specialization",
+              "provider": "Coursera (University of Michigan)",
+              "type": "course",
+              "cost": "Free audit / $49/month",
+              "rating": 4.8,
+              "duration": "8 months",
+              "url": "https://www.coursera.org/specializations/python",
+              "completed": false
+            },
+            {
+              "id": "datacamp-python",
+              "title": "Python Programmer Track",
+              "provider": "DataCamp",
+              "type": "interactive",
+              "cost": "$35/month",
+              "rating": 4.6,
+              "duration": "36 hours",
+              "url": "https://www.datacamp.com/tracks/python-programmer",
+              "completed": false
+            },
+            {
+              "id": "python-data-analysis",
+              "title": "Introduction to Data Science in Python",
+              "provider": "Coursera (University of Michigan)",
+              "type": "course",
+              "cost": "Free audit / $49 certificate",
+              "rating": 4.5,
+              "duration": "4 weeks",
+              "url": "https://www.coursera.org/learn/python-data-analysis",
+              "completed": false
+            },
+            {
+              "id": "numpy-pandas-tutorial",
+              "title": "NumPy and Pandas Masterclass",
+              "provider": "Real Python",
+              "type": "tutorial",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "10 hours",
+              "url": "https://realpython.com/numpy-tutorial/",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "week": 2,
+          "text": "Complete linear algebra fundamentals and matrix operations",
+          "completed": false
+        },
+        {
+          "week": 4,
+          "text": "Master NumPy operations and Pandas data manipulation",
+          "completed": false
+        },
+        {
+          "week": 6,
+          "text": "Understand calculus concepts for ML (gradients, optimization)",
+          "completed": false
+        },
+        {
+          "week": 8,
+          "text": "Build comprehensive data analysis project using Python stack",
+          "completed": false
+        }
+      ],
+      "projects": [
+        {
+          "title": "Mathematical Foundations Portfolio",
+          "description": "Implement linear algebra operations from scratch and solve optimization problems",
+          "deliverables": [
+            "Matrix operations library",
+            "Gradient descent implementation",
+            "Statistical analysis notebook"
+          ]
+        },
+        {
+          "title": "Python Data Analysis Project",
+          "description": "Analyze a real-world dataset using NumPy, Pandas, and visualization libraries",
+          "deliverables": [
+            "Data cleaning pipeline",
+            "Exploratory data analysis",
+            "Visualization dashboard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Machine Learning Fundamentals",
+      "duration": "8-10 weeks",
+      "priority": "Critical",
+      "description": "Master core machine learning algorithms and implementation techniques",
+      "color": "bg-green-500",
+      "icon": "🤖",
+      "totalHours": "80-100 hours",
+      "keySkills": [
+        {
+          "id": "supervised-learning",
+          "title": "Supervised Learning Algorithms",
+          "category": "Machine Learning",
+          "importance": "Critical",
+          "timeRequired": "35-40 hours",
+          "topics": [
+            "Linear and Logistic Regression",
+            "Decision Trees and Random Forests",
+            "Support Vector Machines (SVM)",
+            "K-Nearest Neighbors (KNN)",
+            "Naive Bayes Classification",
+            "Model evaluation and cross-validation"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "andrew-ng-ml",
+              "title": "Machine Learning Course (Andrew Ng)",
+              "provider": "Coursera (Stanford)",
+              "type": "course",
+              "cost": "Free audit / $79 certificate",
+              "rating": 4.9,
+              "duration": "11 weeks",
+              "url": "https://www.coursera.org/learn/machine-learning",
+              "completed": false
+            },
+            {
+              "id": "hands-on-ml-book",
+              "title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
+              "provider": "Aurélien Géron",
+              "type": "book",
+              "cost": "$45",
+              "rating": 4.7,
+              "duration": "Self-paced",
+              "url": "https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646",
+              "completed": false
+            },
+            {
+              "id": "mit-ml-course",
+              "title": "Introduction to Machine Learning with Python",
+              "provider": "edX (MIT)",
+              "type": "course",
+              "cost": "Free audit / $99 certificate",
+              "rating": 4.6,
+              "duration": "9 weeks",
+              "url": "https://www.edx.org/course/introduction-to-machine-learning-with-python",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "unsupervised-learning",
+          "title": "Unsupervised Learning & Feature Engineering",
+          "category": "Machine Learning",
+          "importance": "High",
+          "timeRequired": "25-30 hours",
+          "topics": [
+            "K-means and Hierarchical Clustering",
+            "Principal Component Analysis (PCA)",
+            "t-SNE and UMAP for dimensionality reduction",
+            "Feature selection and engineering",
+            "Association rule learning"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "unsupervised-datacamp",
+              "title": "Unsupervised Learning in Python",
+              "provider": "DataCamp",
+              "type": "course",
+              "cost": "$35/month",
+              "rating": 4.5,
+              "duration": "4 hours",
+              "url": "https://www.datacamp.com/courses/unsupervised-learning-in-python",
+              "completed": false
+            },
+            {
+              "id": "feature-engineering-course",
+              "title": "Feature Engineering for Machine Learning",
+              "provider": "Coursera",
+              "type": "course",
+              "cost": "Free audit / $49 certificate",
+              "rating": 4.4,
+              "duration": "5 weeks",
+              "url": "https://www.coursera.org/learn/feature-engineering",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "ml-tools",
+          "title": "ML Tools & Libraries",
+          "category": "Tools",
+          "importance": "Critical",
+          "timeRequired": "20-30 hours",
+          "topics": [
+            "Scikit-learn ecosystem mastery",
+            "Model selection and hyperparameter tuning",
+            "Pipeline construction and automation",
+            "Model evaluation metrics and validation",
+            "Jupyter notebook best practices"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "scikit-learn-tutorial",
+              "title": "Scikit-learn User Guide",
+              "provider": "Scikit-learn.org",
+              "type": "tutorial",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "15 hours",
+              "url": "https://scikit-learn.org/stable/user_guide.html",
+              "completed": false
+            },
+            {
+              "id": "ml-python-ibm",
+              "title": "Machine Learning with Python",
+              "provider": "IBM (Coursera)",
+              "type": "course",
+              "cost": "Free audit / $49 certificate",
+              "rating": 4.6,
+              "duration": "5 weeks",
+              "url": "https://www.coursera.org/learn/machine-learning-with-python",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "week": 2,
+          "text": "Implement basic ML algorithms from scratch (linear regression, decision tree)",
+          "completed": false
+        },
+        {
+          "week": 4,
+          "text": "Master scikit-learn workflow and achieve >85% accuracy on standard datasets",
+          "completed": false
+        },
+        {
+          "week": 6,
+          "text": "Build and evaluate classification and regression models",
+          "completed": false
+        },
+        {
+          "week": 8,
+          "text": "Complete feature engineering and model optimization project",
+          "completed": false
+        },
+        {
+          "week": 10,
+          "text": "Deploy end-to-end ML project with proper evaluation metrics",
+          "completed": false
+        }
+      ],
+      "projects": [
+        {
+          "title": "ML Algorithm Implementation",
+          "description": "Implement core ML algorithms from scratch using only NumPy",
+          "deliverables": [
+            "Linear regression implementation",
+            "Decision tree classifier",
+            "K-means clustering"
+          ]
+        },
+        {
+          "title": "Predictive Analytics Project",
+          "description": "Build a complete ML pipeline for a real-world prediction task",
+          "deliverables": [
+            "Data preprocessing pipeline",
+            "Model comparison study",
+            "Production-ready model with API"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Deep Learning & Neural Networks",
+      "duration": "10-12 weeks",
+      "priority": "Critical",
+      "description": "Master deep learning architectures and modern AI frameworks",
+      "color": "bg-purple-500",
+      "icon": "🧠",
+      "totalHours": "120-140 hours",
+      "keySkills": [
+        {
+          "id": "neural-networks",
+          "title": "Neural Network Fundamentals",
+          "category": "Deep Learning",
+          "importance": "Critical",
+          "timeRequired": "40-45 hours",
+          "topics": [
+            "Perceptron and Multi-layer Perceptrons",
+            "Backpropagation algorithm and gradient descent",
+            "Activation functions and their properties",
+            "Loss functions and optimization techniques",
+            "Regularization (dropout, batch normalization, L1/L2)"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "deep-learning-specialization",
+              "title": "Deep Learning Specialization",
+              "provider": "Coursera (DeepLearning.AI)",
+              "type": "course",
+              "cost": "$49/month",
+              "rating": 4.9,
+              "duration": "4 months",
+              "url": "https://www.coursera.org/specializations/deep-learning",
+              "completed": false
+            },
+            {
+              "id": "cs231n-stanford",
+              "title": "CS231n: Convolutional Neural Networks",
+              "provider": "Stanford (YouTube)",
+              "type": "video",
+              "cost": "Free",
+              "rating": 4.9,
+              "duration": "20 hours",
+              "url": "https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv",
+              "completed": false
+            },
+            {
+              "id": "deep-learning-book",
+              "title": "Deep Learning Book",
+              "provider": "Goodfellow, Bengio, Courville",
+              "type": "book",
+              "cost": "Free online / $65 paperback",
+              "rating": 4.8,
+              "duration": "Self-paced",
+              "url": "https://www.deeplearningbook.org/",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "cnn-architecture",
+          "title": "Convolutional Neural Networks",
+          "category": "Computer Vision",
+          "importance": "Critical",
+          "timeRequired": "30-35 hours",
+          "topics": [
+            "Convolution operation and feature maps",
+            "Pooling layers and architectural patterns",
+            "Classic architectures (LeNet, AlexNet, VGG, ResNet)",
+            "Transfer learning and fine-tuning",
+            "Image classification and object detection"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "cnn-course",
+              "title": "Convolutional Neural Networks",
+              "provider": "Coursera (DeepLearning.AI)",
+              "type": "course",
+              "cost": "$49/month",
+              "rating": 4.9,
+              "duration": "4 weeks",
+              "url": "https://www.coursera.org/learn/convolutional-neural-networks",
+              "completed": false
+            },
+            {
+              "id": "fastai-course",
+              "title": "Practical Deep Learning for Coders",
+              "provider": "Fast.ai",
+              "type": "course",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "7 weeks",
+              "url": "https://course.fast.ai/",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "rnn-nlp",
+          "title": "Recurrent Networks & NLP",
+          "category": "Natural Language Processing",
+          "importance": "High",
+          "timeRequired": "30-35 hours",
+          "topics": [
+            "Recurrent Neural Networks (RNN) fundamentals",
+            "LSTM and GRU architectures",
+            "Sequence-to-sequence models",
+            "Attention mechanisms and Transformers",
+            "Text preprocessing and embedding techniques"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "sequence-models",
+              "title": "Sequence Models",
+              "provider": "Coursera (DeepLearning.AI)",
+              "type": "course",
+              "cost": "$49/month",
+              "rating": 4.8,
+              "duration": "3 weeks",
+              "url": "https://www.coursera.org/learn/nlp-sequence-models",
+              "completed": false
+            },
+            {
+              "id": "cs224n-stanford",
+              "title": "CS224N: Natural Language Processing with Deep Learning",
+              "provider": "Stanford",
+              "type": "video",
+              "cost": "Free",
+              "rating": 4.9,
+              "duration": "20 hours",
+              "url": "http://web.stanford.edu/class/cs224n/",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "dl-frameworks",
+          "title": "Deep Learning Frameworks",
+          "category": "Tools",
+          "importance": "Critical",
+          "timeRequired": "25-30 hours",
+          "topics": [
+            "TensorFlow 2.x and Keras high-level API",
+            "PyTorch fundamentals and training loops",
+            "Model deployment and serving",
+            "TensorBoard and experiment tracking",
+            "GPU optimization and distributed training"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "tensorflow-developer",
+              "title": "TensorFlow Developer Certificate",
+              "provider": "Coursera (DeepLearning.AI)",
+              "type": "course",
+              "cost": "$49/month",
+              "rating": 4.7,
+              "duration": "4 months",
+              "url": "https://www.coursera.org/professional-certificates/tensorflow-in-practice",
+              "completed": false
+            },
+            {
+              "id": "pytorch-tutorial",
+              "title": "PyTorch for Deep Learning",
+              "provider": "Udacity",
+              "type": "course",
+              "cost": "Free",
+              "rating": 4.6,
+              "duration": "4 weeks",
+              "url": "https://www.udacity.com/course/deep-learning-pytorch--ud188",
+              "completed": false
+            },
+            {
+              "id": "tensorflow-official",
+              "title": "TensorFlow Official Tutorials",
+              "provider": "Google",
+              "type": "tutorial",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "20 hours",
+              "url": "https://www.tensorflow.org/tutorials",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "week": 3,
+          "text": "Build and train neural network from scratch using NumPy",
+          "completed": false
+        },
+        {
+          "week": 6,
+          "text": "Achieve >90% accuracy on CIFAR-10 using CNN",
+          "completed": false
+        },
+        {
+          "week": 9,
+          "text": "Implement RNN for sentiment analysis with >85% accuracy",
+          "completed": false
+        },
+        {
+          "week": 12,
+          "text": "Deploy production-ready deep learning model with monitoring",
+          "completed": false
+        }
+      ],
+      "projects": [
+        {
+          "title": "Computer Vision Application",
+          "description": "Build an end-to-end image classification or object detection system",
+          "deliverables": [
+            "Custom CNN architecture",
+            "Transfer learning implementation",
+            "Web deployment with API"
+          ]
+        },
+        {
+          "title": "NLP Text Analysis System",
+          "description": "Create a comprehensive text analysis tool using RNNs/Transformers",
+          "deliverables": [
+            "Text preprocessing pipeline",
+            "Multi-class classification model",
+            "Real-time inference API"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Advanced AI & Specialization",
+      "duration": "8-10 weeks",
+      "priority": "High",
+      "description": "Master cutting-edge AI techniques and production deployment",
+      "color": "bg-orange-500",
+      "icon": "🚀",
+      "totalHours": "100-120 hours",
+      "keySkills": [
+        {
+          "id": "transformers-llms",
+          "title": "Transformers & Large Language Models",
+          "category": "Advanced NLP",
+          "importance": "Critical",
+          "timeRequired": "35-40 hours",
+          "topics": [
+            "Attention mechanisms and self-attention",
+            "Transformer architecture (encoder-decoder)",
+            "Pre-trained models (BERT, GPT, T5, LLaMA)",
+            "Fine-tuning and transfer learning strategies",
+            "Prompt engineering and in-context learning"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "huggingface-course",
+              "title": "Hugging Face NLP Course",
+              "provider": "Hugging Face",
+              "type": "course",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "8 weeks",
+              "url": "https://huggingface.co/course/chapter1/1",
+              "completed": false
+            },
+            {
+              "id": "attention-paper",
+              "title": "Attention Is All You Need (Original Paper)",
+              "provider": "arXiv",
+              "type": "paper",
+              "cost": "Free",
+              "rating": 4.9,
+              "duration": "4 hours",
+              "url": "https://arxiv.org/abs/1706.03762",
+              "completed": false
+            },
+            {
+              "id": "generative-ai-llms",
+              "title": "Generative AI with Large Language Models",
+              "provider": "Coursera (DeepLearning.AI)",
+              "type": "course",
+              "cost": "$49/month",
+              "rating": 4.7,
+              "duration": "3 weeks",
+              "url": "https://www.coursera.org/learn/generative-ai-with-llms",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "generative-ai",
+          "title": "Generative AI & Advanced Architectures",
+          "category": "Generative Models",
+          "importance": "High",
+          "timeRequired": "30-35 hours",
+          "topics": [
+            "Generative Adversarial Networks (GANs)",
+            "Variational Autoencoders (VAEs)",
+            "Diffusion models and stable diffusion",
+            "Neural style transfer and image generation",
+            "Multimodal AI and vision-language models"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "gans-course",
+              "title": "Generative Adversarial Networks (GANs) Specialization",
+              "provider": "Coursera (DeepLearning.AI)",
+              "type": "course",
+              "cost": "$49/month",
+              "rating": 4.7,
+              "duration": "3 months",
+              "url": "https://www.coursera.org/specializations/generative-adversarial-networks-gans",
+              "completed": false
+            },
+            {
+              "id": "gans-book",
+              "title": "GANs in Action",
+              "provider": "Manning Publications",
+              "type": "book",
+              "cost": "$45",
+              "rating": 4.5,
+              "duration": "Self-paced",
+              "url": "https://www.manning.com/books/gans-in-action",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "mlops-production",
+          "title": "MLOps & Production AI Systems",
+          "category": "MLOps",
+          "importance": "Critical",
+          "timeRequired": "35-45 hours",
+          "topics": [
+            "ML pipeline design and automation",
+            "Model versioning and experiment tracking",
+            "Continuous integration/deployment for ML",
+            "Model monitoring and performance tracking",
+            "A/B testing for ML models and feature flags"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "mlops-specialization",
+              "title": "Machine Learning Engineering for Production (MLOps)",
+              "provider": "Coursera (DeepLearning.AI)",
+              "type": "course",
+              "cost": "$49/month",
+              "rating": 4.6,
+              "duration": "4 months",
+              "url": "https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops",
+              "completed": false
+            },
+            {
+              "id": "mlflow-tutorial",
+              "title": "MLflow Complete Tutorial",
+              "provider": "MLflow.org",
+              "type": "tutorial",
+              "cost": "Free",
+              "rating": 4.7,
+              "duration": "10 hours",
+              "url": "https://mlflow.org/docs/latest/tutorials-and-examples/index.html",
+              "completed": false
+            },
+            {
+              "id": "ml-design-book",
+              "title": "Designing Machine Learning Systems",
+              "provider": "Chip Huyen",
+              "type": "book",
+              "cost": "$55",
+              "rating": 4.8,
+              "duration": "Self-paced",
+              "url": "https://www.amazon.com/Designing-Machine-Learning-Systems-Production-Ready/dp/1098107969",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "week": 2,
+          "text": "Implement attention mechanism and basic transformer from scratch",
+          "completed": false
+        },
+        {
+          "week": 4,
+          "text": "Fine-tune BERT model and achieve SOTA results on NLP task",
+          "completed": false
+        },
+        {
+          "week": 6,
+          "text": "Deploy ML model to cloud with proper monitoring and logging",
+          "completed": false
+        },
+        {
+          "week": 8,
+          "text": "Build complete MLOps pipeline with automated training and deployment",
+          "completed": false
+        },
+        {
+          "week": 10,
+          "text": "Create production-ready AI system with scalability and monitoring",
+          "completed": false
+        }
+      ],
+      "projects": [
+        {
+          "title": "Advanced NLP Application",
+          "description": "Build a sophisticated NLP application using transformers",
+          "deliverables": [
+            "Fine-tuned transformer model",
+            "Multi-task learning setup",
+            "Production API with caching"
+          ]
+        },
+        {
+          "title": "MLOps Pipeline Implementation",
+          "description": "Create a complete MLOps pipeline for model lifecycle management",
+          "deliverables": [
+            "Automated training pipeline",
+            "Model monitoring dashboard",
+            "A/B testing framework"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Professional Development & Portfolio",
+      "duration": "4-6 weeks",
+      "priority": "Critical",
+      "description": "Build professional portfolio and prepare for AI Engineer interviews",
+      "color": "bg-red-500",
+      "icon": "💼",
+      "totalHours": "80-100 hours",
+      "keySkills": [
+        {
+          "id": "portfolio-development",
+          "title": "Technical Portfolio & Communication",
+          "category": "Professional Skills",
+          "importance": "Critical",
+          "timeRequired": "40-50 hours",
+          "topics": [
+            "GitHub portfolio optimization and documentation",
+            "Technical blog writing and case studies",
+            "Open source contributions and community involvement",
+            "Code quality, testing, and best practices",
+            "Presentation skills and technical communication"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "portfolio-guide",
+              "title": "Building a World-Class Data Science Portfolio",
+              "provider": "Towards Data Science",
+              "type": "tutorial",
+              "cost": "Free",
+              "rating": 4.7,
+              "duration": "5 hours",
+              "url": "https://towardsdatascience.com/how-to-build-a-data-science-portfolio-5f566517c79c",
+              "completed": false
+            },
+            {
+              "id": "technical-writing",
+              "title": "Technical Writing Courses",
+              "provider": "Google Developers",
+              "type": "course",
+              "cost": "Free",
+              "rating": 4.6,
+              "duration": "Self-paced",
+              "url": "https://developers.google.com/tech-writing",
+              "completed": false
+            },
+            {
+              "id": "kaggle-competitions",
+              "title": "Kaggle Learn & Competitions",
+              "provider": "Kaggle",
+              "type": "platform",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "Ongoing",
+              "url": "https://www.kaggle.com/learn",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "interview-preparation",
+          "title": "AI Engineer Interview Mastery",
+          "category": "Interview Skills",
+          "importance": "Critical",
+          "timeRequired": "30-40 hours",
+          "topics": [
+            "ML system design and architecture interviews",
+            "Coding challenges and algorithm implementation",
+            "Model debugging and optimization scenarios",
+            "Case study analysis and problem-solving",
+            "Behavioral interviews and leadership principles"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "ml-system-design",
+              "title": "Machine Learning System Design Interview",
+              "provider": "educative.io",
+              "type": "course",
+              "cost": "$79/month",
+              "rating": 4.4,
+              "duration": "Self-paced",
+              "url": "https://www.educative.io/path/machine-learning-system-design-interview",
+              "completed": false
+            },
+            {
+              "id": "leetcode-premium",
+              "title": "LeetCode Premium (ML/AI Questions)",
+              "provider": "LeetCode",
+              "type": "platform",
+              "cost": "$35/month",
+              "rating": 4.5,
+              "duration": "Ongoing",
+              "url": "https://leetcode.com/problemset/all/",
+              "completed": false
+            },
+            {
+              "id": "cracking-ml-interview",
+              "title": "Cracking the Machine Learning Interview",
+              "provider": "Various Authors",
+              "type": "book",
+              "cost": "$40",
+              "rating": 4.6,
+              "duration": "Self-paced",
+              "url": "https://www.amazon.com/dp/B08R1G8ZQV",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "industry-knowledge",
+          "title": "Industry Knowledge & Networking",
+          "category": "Professional Network",
+          "importance": "High",
+          "timeRequired": "15-20 hours",
+          "topics": [
+            "AI industry trends and emerging technologies",
+            "Professional networking and community building",
+            "Conference participation and knowledge sharing",
+            "Mentorship and continuous learning strategies",
+            "Career positioning and personal branding"
+          ],
+          "completed": false,
+          "resources": [
+            {
+              "id": "ai-conferences",
+              "title": "Major AI Conferences (NeurIPS, ICML, ICLR)",
+              "provider": "Various",
+              "type": "conference",
+              "cost": "$500-2000",
+              "rating": 4.9,
+              "duration": "3-5 days each",
+              "url": "https://neurips.cc/",
+              "completed": false
+            },
+            {
+              "id": "ai-newsletters",
+              "title": "The Batch - AI Newsletter",
+              "provider": "DeepLearning.AI",
+              "type": "newsletter",
+              "cost": "Free",
+              "rating": 4.8,
+              "duration": "Weekly",
+              "url": "https://www.deeplearning.ai/the-batch/",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "week": 2,
+          "text": "Complete and deploy first comprehensive portfolio project",
+          "completed": false
+        },
+        {
+          "week": 4,
+          "text": "Publish technical blog post or contribute to open source project",
+          "completed": false
+        },
+        {
+          "week": 6,
+          "text": "Portfolio review-ready with 3+ high-quality AI projects",
+          "completed": false
+        }
+      ],
+      "projects": [
+        {
+          "title": "Capstone AI Project",
+          "description": "Build a comprehensive AI application demonstrating end-to-end expertise",
+          "deliverables": [
+            "Full-stack AI application",
+            "Technical documentation",
+            "Deployment on cloud platform"
+          ]
+        },
+        {
+          "title": "Technical Content Creation",
+          "description": "Create educational content demonstrating your AI expertise",
+          "deliverables": [
+            "Technical blog series",
+            "Video tutorials or demos",
+            "Open source contribution"
+          ]
+        },
+        {
+          "title": "Interview Portfolio",
+          "description": "Prepare materials and practice for AI Engineer interviews",
+          "deliverables": [
+            "System design portfolio",
+            "Coding challenge solutions",
+            "Mock interview recordings"
+          ]
+        }
+      ]
+    }
+  ],
+  "additionalResources": {
+    "communities": [
+      {
+        "name": "r/MachineLearning",
+        "url": "https://www.reddit.com/r/MachineLearning/",
+        "description": "Active ML research and industry discussions",
+        "members": "2.8M+"
+      },
+      {
+        "name": "AI/ML Discord Communities",
+        "url": "https://discord.gg/machinelearning",
+        "description": "Real-time discussions and networking",
+        "members": "100K+"
+      },
+      {
+        "name": "Papers With Code",
+        "url": "https://paperswithcode.com/",
+        "description": "Latest research papers with implementation",
+        "members": "Academic community"
+      },
+      {
+        "name": "Kaggle Community",
+        "url": "https://www.kaggle.com/",
+        "description": "Competitions, datasets, and learning",
+        "members": "13M+"
+      },
+      {
+        "name": "Towards Data Science",
+        "url": "https://towardsdatascience.com/",
+        "description": "Medium publication for ML articles",
+        "members": "600K+ followers"
+      }
+    ],
+    "newsletters": [
+      {
+        "name": "The Batch (Andrew Ng)",
+        "url": "https://www.deeplearning.ai/the-batch/",
+        "frequency": "Weekly",
+        "description": "AI news and insights"
+      },
+      {
+        "name": "AI Research Newsletter",
+        "url": "https://www.airesearch.com/newsletter",
+        "frequency": "Bi-weekly",
+        "description": "Latest AI research summaries"
+      },
+      {
+        "name": "Import AI",
+        "url": "https://jack-clark.net/",
+        "frequency": "Weekly",
+        "description": "AI policy and technical developments"
+      }
+    ],
+    "podcasts": [
+      {
+        "name": "The TWIML AI Podcast",
+        "url": "https://twimlai.com/",
+        "description": "Interviews with ML practitioners and researchers"
+      },
+      {
+        "name": "Lex Fridman Podcast",
+        "url": "https://lexfridman.com/podcast/",
+        "description": "AI researchers and industry leaders"
+      },
+      {
+        "name": "Practical AI",
+        "url": "https://changelog.com/practicalai",
+        "description": "Making AI practical, productive, and accessible"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Google Colab",
+        "url": "https://colab.research.google.com/",
+        "description": "Free GPU access for experimentation",
+        "cost": "Free / $10/month Pro"
+      },
+      {
+        "name": "Weights & Biases",
+        "url": "https://wandb.ai/",
+        "description": "Experiment tracking and visualization",
+        "cost": "Free tier available"
+      },
+      {
+        "name": "DVC (Data Version Control)",
+        "url": "https://dvc.org/",
+        "description": "Data and model versioning",
+        "cost": "Open source"
+      },
+      {
+        "name": "MLflow",
+        "url": "https://mlflow.org/",
+        "description": "ML lifecycle management platform",
+        "cost": "Open source"
+      }
+    ]
+  },
+  "careerInfo": {
+    "salaryRanges": {
+      "entryLevel": {
+        "range": "$80,000 - $120,000",
+        "description": "0-2 years AI experience",
+        "locations": {
+          "sanFrancisco": "$100,000 - $140,000",
+          "newYork": "$90,000 - $130,000",
+          "remote": "$75,000 - $115,000",
+          "austin": "$80,000 - $120,000"
+        }
+      },
+      "experienced": {
+        "range": "$120,000 - $200,000",
+        "description": "2-5 years AI experience",
+        "locations": {
+          "sanFrancisco": "$150,000 - $250,000",
+          "newYork": "$130,000 - $220,000",
+          "remote": "$110,000 - $180,000",
+          "austin": "$120,000 - $190,000"
+        }
+      },
+      "senior": {
+        "range": "$200,000 - $400,000+",
+        "description": "5+ years AI experience",
+        "locations": {
+          "sanFrancisco": "$250,000 - $500,000+",
+          "newYork": "$220,000 - $450,000+",
+          "remote": "$180,000 - $350,000+",
+          "austin": "$200,000 - $380,000+"
+        }
+      }
+    },
+    "jobMarket": {
+      "demand": "High",
+      "growth": "15% annually",
+      "remoteWork": "70% of positions",
+      "competitionLevel": "High for top companies, Moderate overall",
+      "jobAvailability": "50,000+ open positions globally"
+    },
+    "targetCompanies": {
+      "bigTech": [
+        {
+          "name": "Google/Alphabet",
+          "roles": ["AI Engineer", "ML Engineer", "Research Scientist"],
+          "difficulty": "Very High",
+          "averageSalary": "$300,000+"
+        },
+        {
+          "name": "Microsoft",
+          "roles": ["Principal AI Engineer", "ML Engineer", "AI Researcher"],
+          "difficulty": "High",
+          "averageSalary": "$250,000+"
+        },
+        {
+          "name": "Amazon",
+          "roles": ["ML Engineer", "Applied Scientist", "AI Engineer"],
+          "difficulty": "High",
+          "averageSalary": "$230,000+"
+        },
+        {
+          "name": "Meta (Facebook)",
+          "roles": ["AI Engineer", "ML Engineer", "Research Scientist"],
+          "difficulty": "Very High",
+          "averageSalary": "$280,000+"
+        },
+        {
+          "name": "Apple",
+          "roles": ["ML Engineer", "AI Engineer", "Applied ML Scientist"],
+          "difficulty": "High",
+          "averageSalary": "$260,000+"
+        }
+      ],
+      "aiFocused": [
+        {
+          "name": "OpenAI",
+          "roles": ["AI Engineer", "Research Engineer", "ML Engineer"],
+          "difficulty": "Very High",
+          "averageSalary": "$350,000+"
+        },
+        {
+          "name": "Anthropic",
+          "roles": ["AI Safety Engineer", "Research Engineer"],
+          "difficulty": "Very High",
+          "averageSalary": "$320,000+"
+        },
+        {
+          "name": "DeepMind",
+          "roles": ["Research Engineer", "AI Engineer"],
+          "difficulty": "Very High",
+          "averageSalary": "$300,000+"
+        },
+        {
+          "name": "Hugging Face",
+          "roles": ["ML Engineer", "AI Engineer", "Research Engineer"],
+          "difficulty": "High",
+          "averageSalary": "$200,000+"
+        },
+        {
+          "name": "Scale AI",
+          "roles": ["ML Engineer", "AI Engineer", "Data Scientist"],
+          "difficulty": "High",
+          "averageSalary": "$180,000+"
+        }
+      ],
+      "emerging": [
+        {
+          "name": "AI Startups",
+          "roles": ["Founding AI Engineer", "ML Engineer", "AI Researcher"],
+          "difficulty": "Variable",
+          "averageSalary": "$120,000 - $250,000 + equity"
+        }
+      ]
+    },
+    "interviewProcess": {
+      "typical_stages": [
+        "Phone/Video Screening",
+        "Technical Phone Screen",
+        "Take-home Assignment",
+        "Onsite Interviews (4-6 rounds)",
+        "Final Decision"
+      ],
+      "interview_types": {
+        "system_design": "Design ML systems and architectures",
+        "coding": "Implement ML algorithms and data structures",
+        "ml_theory": "Explain ML concepts and mathematics",
+        "behavioral": "Past experience and cultural fit",
+        "case_study": "Solve real-world ML problems"
+      }
+    }
+  },
+  "successMetrics": {
+    "technical": [
+      "Implement ML algorithms from scratch",
+      "Build and deploy deep learning models",
+      "Optimize model performance and efficiency",
+      "Design scalable ML system architecture",
+      "Understand and apply latest AI research"
+    ],
+    "practical": [
+      "Complete 5+ substantial AI/ML projects",
+      "Contribute to open source ML projects",
+      "Pass technical interviews at target companies",
+      "Demonstrate MLOps and production deployment skills",
+      "Build end-to-end AI applications"
+    ],
+    "professional": [
+      "Strong GitHub portfolio with diverse projects",
+      "Technical blog posts or research contributions",
+      "Industry network and professional connections",
+      "Interview readiness and confidence",
+      "Understanding of AI ethics and best practices"
+    ]
+  },
+  "timelineGuidance": {
+    "fastTrack": {
+      "duration": "6 months",
+      "commitment": "25-30 hours/week",
+      "description": "Intensive program for dedicated learners",
+      "requirements": ["Strong programming background", "Math foundation", "Full-time availability"]
+    },
+    "standard": {
+      "duration": "8-10 months",
+      "commitment": "15-20 hours/week",
+      "description": "Balanced approach for working professionals",
+      "requirements": ["Basic programming knowledge", "Part-time availability", "Consistent commitment"]
+    },
+    "extended": {
+      "duration": "12+ months",
+      "commitment": "10-15 hours/week",
+      "description": "Flexible timeline for gradual progression",
+      "requirements": ["Minimal time constraints", "Self-paced learning", "Long-term commitment"]
+    }
+  }
+}

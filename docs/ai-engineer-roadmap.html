@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer to AI Engineer Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe, #00f2fe);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            color: #b8c6db;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .info-card h3 {
+            color: #4facfe;
+            margin-bottom: 5px;
+        }
+        
+        .roadmap {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .phase {
+            position: relative;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .phase:nth-child(odd) .phase-content {
+            margin-right: 50%;
+            padding-right: 60px;
+            text-align: right;
+        }
+        
+        .phase:nth-child(even) .phase-content {
+            margin-left: 50%;
+            padding-left: 60px;
+        }
+        
+        .phase-marker {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid #1a1a2e;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .phase-marker:hover {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.9);
+        }
+        
+        .phase-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(79, 172, 254, 0.3);
+            border-color: rgba(79, 172, 254, 0.5);
+        }
+        
+        .phase-header {
+            margin-bottom: 20px;
+        }
+        
+        .phase-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #1a1a2e;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        
+        .phase-title {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .phase-duration {
+            color: #00f2fe;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .phase-goal {
+            color: #b8c6db;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(5px);
+        }
+        
+        .skill-category {
+            font-weight: bold;
+            color: #4facfe;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-list {
+            font-size: 0.9em;
+            color: #e0e7ff;
+            line-height: 1.6;
+        }
+        
+        .project-highlight {
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.2) 0%, rgba(0, 242, 254, 0.2) 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+        }
+        
+        .project-highlight strong {
+            color: #00f2fe;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .phase:nth-child(1) { animation-delay: 0.1s; }
+        .phase:nth-child(2) { animation-delay: 0.2s; }
+        .phase:nth-child(3) { animation-delay: 0.3s; }
+        .phase:nth-child(4) { animation-delay: 0.4s; }
+        .phase:nth-child(5) { animation-delay: 0.5s; }
+        .phase:nth-child(6) { animation-delay: 0.6s; }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .success-metrics {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .metric-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .metric-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00f2fe;
+        }
+        
+        .metric-label {
+            color: #b8c6db;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .phase-marker {
+                left: 30px;
+            }
+            
+            .phase:nth-child(odd) .phase-content,
+            .phase:nth-child(even) .phase-content {
+                margin-left: 70px;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(79, 172, 254, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            from {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Software Engineer → AI Engineer</h1>
+            <p>Your personalized journey to mastering AI engineering</p>
+        </div>
+        
+        <div class="timeline-info">
+            <div class="info-card">
+                <h3>⏱️ Timeline</h3>
+                <p>6-12 months</p>
+            </div>
+            <div class="info-card">
+                <h3>📚 Weekly Commitment</h3>
+                <p>15-25 hours</p>
+            </div>
+            <div class="info-card">
+                <h3>🎯 Success Rate</h3>
+                <p>40% higher than average</p>
+            </div>
+        </div>
+        
+        <div class="roadmap">
+            <div class="timeline-line"></div>
+            
+            <div class="phase">
+                <div class="phase-marker"></div>
+                <div class="phase-content">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">PHASE 1</div>
+                            <h2 class="phase-title">🧮 Mathematical Foundation</h2>
+                            <div class="phase-duration">Months 1-2</div>
+                            <p class="phase-goal">Build the mathematical intuition for AI</p>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-category">📐 Linear Algebra</div>
+                                <div class="skill-list">
+                                    • Vectors & Matrices<br>
+                                    • Eigenvalues<br>
+                                    • Matrix Operations<br>
+                                    • PCA Implementation
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">📈 Calculus</div>
+                                <div class="skill-list">
+                                    • Derivatives<br>
+                                    • Chain Rule<br>
+                                    • Gradient Descent<br>
+                                    • Optimization
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">📊 Statistics</div>
+                                <div class="skill-list">
+                                    • Probability<br>
+                                    • Distributions<br>
+                                    • Hypothesis Testing<br>
+                                    • Bayes' Theorem
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-highlight">
+                            <strong>🛠️ Key Project:</strong> Build gradient descent optimizer from scratch
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-marker"></div>
+                <div class="phase-content">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">PHASE 2</div>
+                            <h2 class="phase-title">🤖 Machine Learning Core</h2>
+                            <div class="phase-duration">Months 3-4</div>
+                            <p class="phase-goal">Master classical ML algorithms</p>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-category">🎯 Supervised Learning</div>
+                                <div class="skill-list">
+                                    • Linear/Logistic Regression<br>
+                                    • Decision Trees<br>
+                                    • Random Forests<br>
+                                    • SVM & XGBoost
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">🔍 Unsupervised Learning</div>
+                                <div class="skill-list">
+                                    • K-means Clustering<br>
+                                    • PCA & t-SNE<br>
+                                    • Anomaly Detection<br>
+                                    • DBSCAN
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">⚡ Model Optimization</div>
+                                <div class="skill-list">
+                                    • Cross-validation<br>
+                                    • Feature Engineering<br>
+                                    • Hyperparameter Tuning<br>
+                                    • Ensemble Methods
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-highlight">
+                            <strong>🛠️ Key Project:</strong> End-to-end ML pipeline with model comparison
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-marker"></div>
+                <div class="phase-content">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">PHASE 3</div>
+                            <h2 class="phase-title">🧠 Deep Learning Mastery</h2>
+                            <div class="phase-duration">Months 5-6</div>
+                            <p class="phase-goal">Neural networks and modern AI</p>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-category">🔗 Neural Networks</div>
+                                <div class="skill-list">
+                                    • Backpropagation<br>
+                                    • CNNs & RNNs<br>
+                                    • Transfer Learning<br>
+                                    • PyTorch/TensorFlow
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">🤖 Transformers</div>
+                                <div class="skill-list">
+                                    • Attention Mechanism<br>
+                                    • BERT & GPT<br>
+                                    • Fine-tuning<br>
+                                    • HuggingFace
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">🎨 Generative AI</div>
+                                <div class="skill-list">
+                                    • Autoencoders<br>
+                                    • GANs Basics<br>
+                                    • Diffusion Models<br>
+                                    • Style Transfer
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-highlight">
+                            <strong>🛠️ Key Project:</strong> Custom chatbot using transformer models
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-marker"></div>
+                <div class="phase-content">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">PHASE 4</div>
+                            <h2 class="phase-title">⚙️ AI Engineering & MLOps</h2>
+                            <div class="phase-duration">Months 7-8</div>
+                            <p class="phase-goal">Production-ready AI systems</p>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-category">🚀 Deployment</div>
+                                <div class="skill-list">
+                                    • Model APIs<br>
+                                    • Docker & K8s<br>
+                                    • Cloud Platforms<br>
+                                    • Edge Deployment
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">📊 MLOps</div>
+                                <div class="skill-list">
+                                    • MLflow<br>
+                                    • Model Monitoring<br>
+                                    • A/B Testing<br>
+                                    • CI/CD for ML
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">💾 Data Engineering</div>
+                                <div class="skill-list">
+                                    • Data Pipelines<br>
+                                    • Feature Stores<br>
+                                    • Stream Processing<br>
+                                    • Real-time Inference
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-highlight">
+                            <strong>🛠️ Key Project:</strong> Scalable ML API with monitoring
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-marker"></div>
+                <div class="phase-content">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">PHASE 5</div>
+                            <h2 class="phase-title">🎯 Specialization</h2>
+                            <div class="phase-duration">Months 9-10</div>
+                            <p class="phase-goal">Develop deep expertise</p>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-category">💬 LLMs Track</div>
+                                <div class="skill-list">
+                                    • Prompt Engineering<br>
+                                    • RAG Systems<br>
+                                    • LangChain<br>
+                                    • Fine-tuning
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">👁️ Computer Vision</div>
+                                <div class="skill-list">
+                                    • Object Detection<br>
+                                    • Segmentation<br>
+                                    • 3D Vision<br>
+                                    • Video Analysis
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">🏗️ Infrastructure</div>
+                                <div class="skill-list">
+                                    • ML Platforms<br>
+                                    • Cost Optimization<br>
+                                    • Multi-model Serving<br>
+                                    • Advanced Monitoring
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-highlight">
+                            <strong>🛠️ Key Project:</strong> Industry-specific AI solution
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phase">
+                <div class="phase-marker"></div>
+                <div class="phase-content">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-number">PHASE 6</div>
+                            <h2 class="phase-title">💼 Career Launch</h2>
+                            <div class="phase-duration">Months 11-12</div>
+                            <p class="phase-goal">Land your AI engineering role</p>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-category">📁 Portfolio</div>
+                                <div class="skill-list">
+                                    • 3-4 Major Projects<br>
+                                    • Open Source Contributions<br>
+                                    • Technical Blog<br>
+                                    • GitHub Showcase
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">🎤 Interview Prep</div>
+                                <div class="skill-list">
+                                    • ML System Design<br>
+                                    • Algorithm Derivations<br>
+                                    • Coding Challenges<br>
+                                    • Behavioral Stories
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-category">🔍 Job Search</div>
+                                <div class="skill-list">
+                                    • Internal Transfer<br>
+                                    • Networking Events<br>
+                                    • Targeted Applications<br>
+                                    • Salary Negotiation
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-highlight">
+                            <strong>🛠️ Key Outcome:</strong> AI Engineer offers with $150K+ salary
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="success-metrics">
+            <h2>🏆 Success Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-number">$165K</div>
+                    <div class="metric-label">Average Starting Salary</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">50%</div>
+                    <div class="metric-label">Salary Increase</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">91%</div>
+                    <div class="metric-label">Role Retention</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">6-12</div>
+                    <div class="metric-label">Months to Transition</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.width = particle.style.height = Math.random() * 5 + 2 + 'px';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = Math.random() * 20 + 20 + 's';
+            document.getElementById('particles').appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 40000);
+        }
+        
+        // Create initial particles
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createParticle, i * 1000);
+        }
+        
+        // Continue creating particles
+        setInterval(createParticle, 2000);
+        
+        // Add click interactions to phase markers
+        document.querySelectorAll('.phase-marker').forEach((marker, index) => {
+            marker.addEventListener('click', () => {
+                const phase = marker.parentElement;
+                phase.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Add pulse effect
+                marker.style.animation = 'pulse 0.5s ease-out';
+                setTimeout(() => {
+                    marker.style.animation = '';
+                }, 500);
+            });
+        });
+        
+        // Add hover sound effect (visual feedback instead of actual sound)
+        document.querySelectorAll('.phase-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

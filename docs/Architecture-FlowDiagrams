@@ -1,0 +1,383 @@
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                           CAREER ROADMAP AI SYSTEM                              │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐            │
+│  │   FastAPI App   │    │   Middleware    │    │   API Router    │            │
+│  │   (main.py)     │    │   (CORS, Auth)  │    │   (v1/router)   │            │
+│  └─────────────────┘    └─────────────────┘    └─────────────────┘            │
+│           │                       │                       │                    │
+│           └───────────────────────┼───────────────────────┘                    │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        API ENDPOINTS (v1/endpoints/)                     │  │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │  │
+│  │  │   Roadmap   │ │   Career    │ │   Skills    │ │  Progress   │        │  │
+│  │  │ Generation  │ │  Analysis   │ │  Mapping    │ │  Tracking   │        │  │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                    CORE ORCHESTRATION LAYER                              │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │
+│  │  │              CareerRoadmapOrchestrator                              │  │
+│  │  │              (core/chains/orchestrator.py)                          │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        LANGCHAIN AGENTS                                 │  │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │  │
+│  │  │   Career    │ │   Skills    │ │   Roadmap   │ │ Complexity  │        │  │
+│  │  │  Analyzer   │ │   Mapper    │ │ Generator   │ │ Estimator   │        │  │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        LANGCHAIN TOOLS                                   │  │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │  │
+│  │  │   Job       │ │   Skills    │ │   Course    │ │   Project   │        │  │
+│  │  │   Market    │ │  Database   │ │   Finder    │ │ Suggestion  │        │  │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        SERVICES LAYER                                   │  │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐                        │  │
+│  │  │     LLM     │ │  Database   │ │    Cache    │                        │  │
+│  │  │   Service   │ │  Service    │ │   Service   │                        │  │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘                        │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        EXTERNAL SERVICES                                 │  │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │  │
+│  │  │   OpenAI    │ │  Anthropic  │ │ PostgreSQL  │ │    Redis    │        │  │
+│  │  │   (GPT-4)   │ │  (Claude)   │ │  Database   │ │    Cache    │        │  │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│                        API ENDPOINTS                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  POST /api/v1/roadmap/generate                                  │
+│  ├─ Input: CareerTransitionRequest                              │
+│  ├─ Output: CareerTransitionRoadmap                             │
+│  └─ Flow: Request → Orchestrator → Agents → Response            │
+│                                                                 │
+│  GET /api/v1/roadmap/{roadmap_id}                               │
+│  ├─ Input: roadmap_id                                           │
+│  ├─ Output: CareerTransitionRoadmap                             │
+│  └─ Flow: Request → Database → Response                         │
+│                                                                 │
+│  POST /api/v1/career/analyze                                    │
+│  ├─ Input: CareerAnalysisRequest                                │
+│  ├─ Output: CareerAnalysisResponse                              │
+│  └─ Flow: Request → CareerAnalyzer → Response                   │
+│                                                                 │
+│  POST /api/v1/skills/map                                        │
+│  ├─ Input: SkillsMappingRequest                                 │
+│  ├─ Output: SkillsMappingResponse                               │
+│  └─ Flow: Request → SkillsMapper → Response                     │
+│                                                                 │
+│  POST /api/v1/progress/update                                   │
+│  ├─ Input: ProgressUpdateRequest                                │
+│  ├─ Output: ProgressReport                                      │
+│  └─ Flow: Request → Database → Calculation → Response           │
+└─────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│                 CareerRoadmapOrchestrator                       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  generate_roadmap(request)                                      │
+│  ├─ Phase 1: Parallel Analysis                                  │
+│  │  ├─ career_analyzer.analyze_transition()                     │
+│  │  └─ skills_mapper.map_skills()                               │
+│  │                                                                 │
+│  ├─ Phase 2: Roadmap Generation                                 │
+│  │  ├─ Extract skills_to_learn                                  │
+│  │  └─ roadmap_generator.generate_roadmap()                     │
+│  │                                                                 │
+│  ├─ Phase 3: Complexity Estimation                              │
+│  │  └─ complexity_estimator.estimate_complexity()               │
+│  │                                                                 │
+│  └─ Phase 4: Compile Final Roadmap                              │
+│     ├─ Create milestones                                        │
+│     ├─ Generate learning resources                              │
+│     ├─ Create project recommendations                           │
+│     └─ Compile all data into CareerTransitionRoadmap            │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│                        LANGCHAIN AGENTS                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                CareerAnalyzerAgent                          │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Tools: JobMarketResearchTool, SkillsDatabaseTool         │ │
+│  │ • Memory: ConversationBufferWindowMemory (k=5)             │ │
+│  │ • Function: analyze_transition()                            │ │
+│  │ • Output: Career analysis with market insights              │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                SkillsMapperAgent                            │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Tools: SkillsDatabaseTool, CourseFinderTool              │ │
+│  │ • Memory: ConversationBufferWindowMemory (k=5)             │ │
+│  │ • Function: map_skills()                                    │ │
+│  │ • Output: Skills gap analysis and mapping                  │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                RoadmapGeneratorAgent                        │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Tools: CourseFinderTool, ProjectSuggestionTool           │ │
+│  │ • Memory: ConversationBufferWindowMemory (k=5)             │ │
+│  │ • Function: generate_roadmap()                              │ │
+│  │ • Output: Learning roadmap with milestones                 │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                ComplexityEstimatorAgent                     │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Tools: JobMarketTool, SkillsDatabaseTool                 │ │
+│  │ • Memory: ConversationBufferWindowMemory (k=5)             │ │
+│  │ • Function: estimate_complexity()                           │ │
+│  │ • Output: Complexity metrics and timeline estimates        │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│                        LANGCHAIN TOOLS                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                JobMarketResearchTool                        │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Function: Research job market trends                      │ │
+│  │ • Data: Salary ranges, demand, job postings                │ │
+│  │ • Output: Market analysis for career roles                 │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                SkillsDatabaseTool                           │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Function: Query skills database                           │ │
+│  │ • Data: Skills definitions, requirements, relationships     │ │
+│  │ • Output: Skills information and mappings                  │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                CourseFinderTool                             │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Function: Find relevant courses and resources             │ │
+│  │ • Data: Course catalogs, learning platforms                │ │
+│  │ • Output: Course recommendations and learning paths        │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                ProjectSuggestionTool                        │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Function: Suggest practical projects                      │ │
+│  │ • Data: Project templates, difficulty levels               │ │
+│  │ • Output: Project recommendations for skill building       │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                CertificationTool                            │ │
+│  ├─────────────────────────────────────────────────────────────┤ │
+│  │ • Function: Find relevant certifications                    │ │
+│  │ • Data: Certification programs, requirements               │ │
+│  │ • Output: Certification recommendations                    │ │
+│  └─────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+
+
+
+
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│   Client    │    │  FastAPI    │    │  Cache      │    │ PostgreSQL  │
+│  Request    │    │  App        │    │  (Redis)    │    │  Database   │
+└──────┬──────┘    └──────┬──────┘    └──────┬──────┘    └──────┬──────┘
+       │                  │                  │                  │
+       │ POST /roadmap/   │                  │                  │
+       │ generate         │                  │                  │
+       └─────────────────►│                  │                  │
+                          │                  │                  │
+                          │ Check Cache      │                  │
+                          │ (cache_key)      │                  │
+                          └─────────────────►│                  │
+                          │                  │                  │
+                          │ Cache Miss       │                  │
+                          │◄─────────────────┘                  │
+                          │                  │                  │
+                          │ Initialize       │                  │
+                          │ Orchestrator     │                  │
+                          │                  │                  │
+                          │ Parallel Agent   │                  │
+                          │ Execution        │                  │
+                          │                  │                  │
+                          │ ┌─────────────┐  │                  │
+                          │ │ Career      │  │                  │
+                          │ │ Analyzer    │  │                  │
+                          │ └─────────────┘  │                  │
+                          │                  │                  │
+                          │ ┌─────────────┐  │                  │
+                          │ │ Skills      │  │                  │
+                          │ │ Mapper      │  │                  │
+                          │ └─────────────┘  │                  │
+                          │                  │                  │
+                          │ ┌─────────────┐  │                  │
+                          │ │ Roadmap     │  │                  │
+                          │ │ Generator   │  │                  │
+                          │ └─────────────┘  │                  │
+                          │                  │                  │
+                          │ ┌─────────────┐  │                  │
+                          │ │ Complexity  │  │                  │
+                          │ │ Estimator   │  │                  │
+                          │ └─────────────┘  │                  │
+                          │                  │                  │
+                          │ Compile Final    │                  │
+                          │ Roadmap          │                  │
+                          │                  │                  │
+                          │ Cache Result     │                  │
+                          └─────────────────►│                  │
+                          │                  │                  │
+                          │ Save to DB       │                  │
+                          │ (Background)     │                  │
+                          └────────────────────────────────────►│
+                          │                  │                  │
+                          │ Return Response  │                  │
+                          │◄─────────────────┘                  │
+       │◄─────────────────┘                  │                  │
+       │                  │                  │                  │
+       │ GET /roadmap/{id}│                  │                  │
+       └─────────────────►│                  │                  │
+                          │                  │                  │
+                          │ Query Database   │                  │
+                          └────────────────────────────────────►│
+                          │                  │                  │
+                          │ Return Roadmap   │                  │
+                          │◄────────────────────────────────────┘
+       │◄─────────────────┘                  │                  │
+       │                  │                  │                  │
+
+
+
+
+
+
+
+
+       ┌─────────────────────────────────────────────────────────────────────────────────┐
+│                           /api/v1/roadmap/generate FLOW                        │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  ┌─────────────┐                                                               │
+│  │   Client    │                                                               │
+│  │  Request    │                                                               │
+│  └──────┬──────┘                                                               │
+│         │ POST /api/v1/roadmap/generate                                        │
+│         │ {                                                                     │
+│         │   "current_role": "Software Engineer",                               │
+│         │   "target_role": "ML Engineer",                                      │
+│         │   "current_skills": ["Python", "SQL"],                               │
+│         │   "experience_years": 3,                                             │
+│         │   "available_hours_per_week": 10                                     │
+│         │ }                                                                    │
+│         └─────────────────────────────────────────────────────────────────────┘
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                    FastAPI Endpoint Handler                              │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ generate_roadmap() function                                         │  │  │
+│  │  │                                                                     │  │  │
+│  │  │ 1. Validate request (Pydantic)                                     │  │  │
+│  │  │ 2. Generate cache key                                              │  │  │
+│  │  │ 3. Check Redis cache                                               │  │  │
+│  │  │ 4. If cache hit: return cached result                              │  │  │
+│  │  │ 5. If cache miss: proceed to generation                            │  │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                    CareerRoadmapOrchestrator                             │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ generate_roadmap() method                                           │  │  │
+│  │  │                                                                     │  │  │
+│  │  │ Phase 1: Parallel Initial Analysis                                  │  │  │
+│  │  │ ├─ career_analyzer.analyze_transition()                            │  │  │
+│  │  │ └─ skills_mapper.map_skills()                                      │  │  │
+│  │  │                                                                     │  │  │
+│  │  │ Phase 2: Roadmap Generation                                        │  │  │
+│  │  │ ├─ Extract skills_to_learn                                         │  │  │
+│  │  │ └─ roadmap_generator.generate_roadmap()                            │  │  │
+│  │  │                                                                     │  │  │
+│  │  │ Phase 3: Complexity Estimation                                     │  │  │
+│  │  │ └─ complexity_estimator.estimate_complexity()                      │  │  │
+│  │  │                                                                     │  │  │
+│  │  │ Phase 4: Compile Final Roadmap                                     │  │  │
+│  │  │ ├─ Create milestones                                               │  │  │
+│  │  │ ├─ Generate learning resources                                     │  │  │
+│  │  │ ├─ Create project recommendations                                  │  │  │
+│  │  │ └─ Compile all data                                                │  │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        LangChain Agents                                 │  │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │  │
+│  │  │   Career    │ │   Skills    │ │   Roadmap   │ │ Complexity  │        │  │
+│  │  │  Analyzer   │ │   Mapper    │ │ Generator   │ │ Estimator   │        │  │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │  │
+│  │       │                   │                   │                   │        │  │
+│  │       │                   │                   │                   │        │  │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │  │
+│  │  │   Job       │ │   Skills    │ │   Course    │ │   Project   │        │  │
+│  │  │   Market    │ │  Database   │ │   Finder    │ │ Suggestion  │        │  │
+│  │  │   Tool      │ │   Tool      │ │   Tool      │ │   Tool      │        │  │
+│  │  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        Background Tasks                                 │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ 1. save_roadmap_to_db() - Save to PostgreSQL                        │  │  │
+│  │  │ 2. track_roadmap_generation() - Analytics tracking                  │  │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                        Response & Caching                               │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ 1. Cache result in Redis (TTL: 1 hour)                              │  │  │
+│  │  │ 2. Return CareerTransitionRoadmap response                          │  │  │
+│  │  │ 3. Background tasks continue execution                               │  │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+│                                   │                                            │
+│  ┌─────────────────────────────────┼─────────────────────────────────────────┐  │
+│  │                           Client Response                                │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ {                                                                     │  │  │
+│  │  │   "roadmap_id": "uuid-123",                                          │  │  │
+│  │  │   "current_role": "Software Engineer",                               │  │  │
+│  │  │   "target_role": "ML Engineer",                                      │  │  │
+│  │  │   "transferable_skills": [...],                                      │  │  │
+│  │  │   "skills_to_acquire": [...],                                        │  │  │
+│  │  │   "milestones": [...],                                               │  │  │
+│  │  │   "metrics": {...}                                                   │  │  │
+│  │  │ }                                                                    │  │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │  │
+│  └─────────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────────┘
